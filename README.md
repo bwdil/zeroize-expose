@@ -17,14 +17,14 @@ the following:"*
  - Heap reallocation when using `Vec` and `String`
  - Borrowers of a reference making copies of data
 
-The `zeroize` crate only guarantees that *"subsequent reads result in zeroized values"*, but it has no way of zeroing secrets that are either deliberately or inadvertently leaked. 
+The `zeroize` crate only guarantees that *"subsequent reads result in zeroized values"*, but it has no way of zeroing secrets that are either deliberately or inadvertently exposed. 
 
 The potential for exposure is not limited to `String` type, but can also apply to a `Vec`.
 
 ## Intent
 Create awareness around securely managing secrets and the potential for exposure even when relying on the use of `zeroize`
 
-This project was inspired by the `memory-testing` crate in the bitwarden [sdk](https://github.com/bitwarden/sdk/). 
+This project was inspired by the `memory-testing` crate in the bitwarden [sdk](https://github.com/bitwarden/sdk/) and demonstrates the ease at which one can undermine zeroing.
 
 ## Usage
 ./zeroize-test expose

@@ -62,7 +62,7 @@ pub fn analyze(dmp: &str, pattern: &str) {
             println!("[!] Secret found in post-zeroize memory dump\n");
 
             let xxd_output = Command::new("xxd")    // hex dump
-                .args(["-c 64", &file_path.to_string()])
+                .args(["-c 256", &file_path.to_string()])
                 .stdout(Stdio::piped())
                 .spawn()
                 .unwrap();
