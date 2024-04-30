@@ -68,8 +68,7 @@ pub fn analyze(dmp: &str, pattern: &str) {
                 .unwrap();
 
             let grep_output = Command::new("grep") // grep
-                //.args(["-e", &env::var("SECRET").unwrap()])
-                .args(["-e", "SECRET"])
+                .args(["-e", &env::var("SECRET").unwrap()])
                 .stdin(Stdio::from(xxd_output.stdout.unwrap()))
                 .stdout(Stdio::piped())
                 .spawn()
