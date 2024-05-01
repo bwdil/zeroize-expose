@@ -27,6 +27,7 @@ Create awareness around securely managing secrets and the potential for exposure
 This project was inspired by the `memory-testing` crate in the bitwarden [sdk](https://github.com/bitwarden/sdk/) and demonstrates the ease at which one can undermine zeroing.
 
 ## Usage
+./zeroize-expose leak
 ./zeroize-expose expose
 
 Generates a secret and exposes the data in pre and post zeroized memory dumps.
